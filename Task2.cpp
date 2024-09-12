@@ -1,9 +1,8 @@
 #include<iostream>
 #include<vector>
 
-int main()
+void foundSum(std::vector<int>& a)
 {
-    std::vector<int> a {2, 7, 11, 15};
     int num;
     std::cout<<"\nEnter number: ";
     std::cin>>num;
@@ -24,4 +23,10 @@ int main()
     {
         std::cout<<"\nSum of numbers not found";
     }
+}
+
+int main()
+{
+    std::vector<int> a {2, 7, 11, 15};
+    foundSum(a);
 }

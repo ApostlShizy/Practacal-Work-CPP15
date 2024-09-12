@@ -2,24 +2,22 @@
 #include<vector>
 #include<cmath>
 
-int main()
+int findInd(std::vector<int>& numbers)
 {
-    int firstInd = 0;    
-    std::vector<int>numbers{-200, -100, -50, -5, 1, 10, 15,20,25 };
-
-    for (int i = 0; i < numbers.size() && !firstInd; ++i)
+    for (int i = 0; i < numbers.size(); ++i)
     {
         if (numbers[i] > 0)
         {
-            firstInd = i;
+            return i;
         }
     }
-    
+    return -1;
+}
+void display_by_module(std::vector<int>& numbers, int firstInd)
+{
+    std::cout << "\nOutput by module: ";
     int j = 1;
     int i = 0;
-
-    std::cout<<"\nOutput by module: ";
-
     while (firstInd + i < numbers.size() || firstInd - j >= 0)
     {
         if (firstInd + i < numbers.size() && numbers[firstInd + i] < abs(numbers[firstInd - j]))
@@ -32,5 +30,21 @@ int main()
             std::cout << numbers[firstInd - j] << " ";
             ++j;
         }
+    }
+}
+
+int main()
+{
+    std::vector<int>numbers{ -200, -100, -50, -5, 1, 10, 15,20,25 };
+    int firstInd = findInd(numbers);
+
+    if (firstInd == -1)
+    {
+        firstInd = numbers.size()-1;
+        display_by_module(numbers, firstInd);
+    }
+    else
+    {
+        display_by_module(numbers, firstInd);
     }
 }

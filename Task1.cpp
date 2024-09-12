@@ -1,9 +1,8 @@
 #include<iostream>
 #include<vector>
 
-int main()
+void foundRange(std::vector<int>& numbers)
 {
-    std::vector<int> numbers {-2, 1, -3, 4, -1 ,2 ,1 ,-5 ,4};
     int maxSum = 0;
     int ind_i = 0;
     int ind_j = 0;
@@ -26,4 +25,10 @@ int main()
 
     std::cout<<"\ni is = "<< ind_i << " j is = "<< ind_j;
     std::cout<<"\nSum is: "<<maxSum;
+}
+
+int main()
+{
+    std::vector<int> numbers {-2, 1, -3, 4, -1 ,2 ,1 ,-5 ,4};
+    foundRange(numbers);
 }
