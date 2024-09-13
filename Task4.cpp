@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<cmath>
 
 int findInd(std::vector<int>& numbers)
 {
@@ -20,7 +19,7 @@ void display_by_module(std::vector<int>& numbers, int firstInd)
     int i = 0;
     while (firstInd + i < numbers.size() || firstInd - j >= 0)
     {
-        if (firstInd + i < numbers.size() && numbers[firstInd + i] < abs(numbers[firstInd - j]))
+        if (firstInd + i < numbers.size() && numbers[firstInd + i] < -numbers[firstInd - j])
         {
             std::cout << numbers[firstInd + i] << " ";
             ++i;
