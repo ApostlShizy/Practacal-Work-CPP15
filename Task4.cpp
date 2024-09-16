@@ -21,13 +21,11 @@ void display_by_module(std::vector<int>& numbers, int firstInd)
     {
         if (firstInd + i < numbers.size() && numbers[firstInd + i] < -numbers[firstInd - j])
         {
-            std::cout << numbers[firstInd + i] << " ";
-            ++i;
+            std::cout << numbers[firstInd + i++] << " ";            
         }
         else
         {
-            std::cout << numbers[firstInd - j] << " ";
-            ++j;
+            std::cout << numbers[firstInd - j++] << " ";
         }
     }
 }

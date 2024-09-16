@@ -39,7 +39,11 @@ int main()
     {
         std::cout << "\n\nInput number \n(-1 output) \n(-2 exit)\n(> 0) add in vector\nEnter: ";
         std::cin >> input;
-
+        if(std::cin.fail())
+        {
+            std::cerr<<"\nWrong input! Please enter a number.";
+            return 1;
+        }
         if (input > 0)
         {
             addNum(vec, input);
